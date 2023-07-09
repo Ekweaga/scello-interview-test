@@ -14,22 +14,26 @@ export  const store = createStore({
             email:"lizzy@gmail.com",
             online:"Active",
             paidStatus:"Unpaid",
-            lastLogin:"Jan/12/2008",
-            paidOn:"Mar/14/2009",
+            lastLogin:"12/JAN/2008",
+            paidOn:"14/MAR/2009",
             amount:200,
+            show:false,
                 activity:[
+                    {
+                    id:1
+                  },
               {
-                  Date:"Jan/12/2008",
+                  Date:"12/JAN/2008",
                   activity:"Lorem ipsum.",
                   details:"Lorem ipsum dolor  suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2008",
+ Date:"12/FEB/2008",
                   activity:"Lorem ipsum dolo.",
                   details:"Lorem Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2008",
+                 Date:"12/NOV/2008",
                   activity:"Lorem ipsum .",
                   details:"Lorem ipsum dol semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -43,17 +47,17 @@ export  const store = createStore({
             email:"hikay133@gmail.com",
             online:"Active",
             paidStatus:"Paid",
-            lastLogin:"Jan/12/2006",
-            paidOn:"Mar/14/2007",
+            lastLogin:"12/JAN/2006",
+            paidOn:"14/MAR/2007",
             amount:200,
             activity:[
               {
-                  Date:"Jan/12/2004",
+                  Date:"12/JAN/2004",
                   activity:"Lorem ipsum dolor .",
                   details:"Lorem ipsum suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2004",
+ Date:"12/FEB/2004",
                   activity:"Lorem ipsum .",
                   details:"Lorem ipsumsuspendisse vestibulum."
               },
@@ -73,22 +77,22 @@ export  const store = createStore({
             email:"samuel@gmail.com",
             online:"Active",
             paidStatus:"Paid",
-            lastLogin:"Jan/12/2009",
-            paidOn:"Mar/14/2009",
+            lastLogin:"12/JAN/2009",
+            paidOn:"14/MAR/2009",
             amount:1200,
                 activity:[
               {
-                  Date:"Jan/12/2007",
+                  Date:"12/JAN/2007",
                   activity:"Lorem ipsum .",
                   details:"Lorem Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2007",
+ Date:"12/FEB/2007",
                   activity:"Lorem ipsum ",
                   details:"Lorem ipsum dolor sit amet, vestibulum."
               },
               {
-                 Date:"Nov/12/2007",
+                 Date:"12/NOV/2007",
                   activity:"Lorem ipsum .",
                   details:"Lorem ipsum dolor sit amet, vestibulum."
               }
@@ -103,22 +107,22 @@ export  const store = createStore({
             email:"willaim@gmail.com",
             online:"Active",
             paidStatus:"Overdue",
-            lastLogin:"Jan/12/2006",
-            Dued:"Mar/14/2007",
+            lastLogin:"12/JAN/2006",
+            Dued:"14/MAR/2007",
             amount:1000,
                 activity:[
               {
-                  Date:"Jan/12/2009",
+                  Date:"12/JAN/2009",
                   activity:"Lorem ipsum dolor.",
                   details:"Lorem ipsum dolor sit amet, consectetidulum."
               },
               {
- Date:"Feb/12/2009",
+ Date:"12/FEB/2009",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2009",
+                 Date:"12/NOV/2009",
                   activity:"Lorem ipsum .",
                   details:"Lorem ltricies suspendisse vestibulum."
               }
@@ -132,17 +136,17 @@ export  const store = createStore({
             email:"adebayo@gmail.com",
             online:"Active",
             paidStatus:"Paid",
-            lastLogin:"Feb/12/2006",
-            paidOn:"Mar/14/2007",
+            lastLogin:"12/FEB/2006",
+            paidOn:"14/MAR/2007",
             amount:2500,
                 activity:[
               {
-                  Date:"Jan/12/2019",
+                  Date:"12/JAN/2019",
                   activity:"Lorem ipsum dolor.",
                   details:"Lorem suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2019",
+ Date:"12/FEB/2019",
                   activity:"Lorem ipsum.",
                   details:"Lorem ipsum dolor sit amet, Ultricies suspendisse vestibulum."
               },
@@ -162,22 +166,22 @@ export  const store = createStore({
             email:"hikay@gmail.com",
             online:"Active",
             paidStatus:"Overdue",
-            lastLogin:"Jan/12/2006",
-            Dued:"Mar/14/2007",
+            lastLogin:"12/JAN/2006",
+            Dued:"14/MAR/2007",
             amount:650,
             activity:[
               {
-                  Date:"Jan/12/2004",
+                  Date:"12/JAN/2004",
                   activity:"Lorem ipsum dolor.",
                   details:"Loremltricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2004",
+ Date:"12/FEB/2004",
                   activity:"Lorem ipsum.",
                   details:"Lorem ipsum dolorricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2004",
+                 Date:"12/NOV/2004",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem. Ultricies suspendisse vestibulum."
               }
@@ -193,22 +197,22 @@ export  const store = createStore({
             email:"oluwa@gmail.com",
             online:"Inactive",
             paidStatus:"Unpaid",
-            lastLogin:"Jan/12/2006",
-            Dues:"Mar/14/2007",
+            lastLogin:"12/JAN/2006",
+            Dues:"14/MAR/2007",
             amount:4500,
                 activity:[
          {
-                  Date:"Jan/12/2016",
+                  Date:"12/JAN/2016",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2016",
+ Date:"12/FEB/2016",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2016",
+                 Date:"12/NOV/2016",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -223,22 +227,22 @@ export  const store = createStore({
             email:"willaim@gmail.com",
             online:"Active",
             paidStatus:"Overdue",
-            lastLogin:"Jan/12/2006",
-            paidOn:"Mar/14/2007",
+            lastLogin:"12/JAN/2006",
+            paidOn:"14/MAR/2007",
             amount:1000,
                 activity:[
               {
-                  Date:"Jan/12/2009",
+                  Date:"12/JAN/2009",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2009",
+ Date:"12/FEB/2009",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2009",
+                 Date:"12/NOV/2009",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -252,22 +256,22 @@ export  const store = createStore({
             email:"vicking@gmail.com",
             online:"Inactive",
             paidStatus:"Unpaid",
-            lastLogin:"Jan/12/2006",
-            Dues:"Mar/14/2007",
+            lastLogin:"12/JAN/2006",
+            Dues:"14/MAR/2007",
             amount:2000,
                 activity:[
                {
-                  Date:"Jan/12/2013",
+                  Date:"12/JAN/2013",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2013",
+ Date:"12/FEB/2013",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2013",
+                 Date:"22/NOV/2013",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -282,22 +286,22 @@ export  const store = createStore({
             email:"seyi@gmail.com",
             online:"Active",
             paidStatus:"Unpaid",
-            lastLogin:"Jan/12/2006",
-            Dues:"Mar/14/2007",
+            lastLogin:"12/JAN/2006",
+            Dues:"14/MAR/2007",
             amount:2400,
                 activity:[
               {
-                  Date:"Jan/12/2011",
+                  Date:"12/JAN/2011",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2011",
+ Date:"12/FEB/2011",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2011",
+                 Date:"12/NOV/2011",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -312,22 +316,22 @@ export  const store = createStore({
             email:"ife@gmail.com",
             online:"Active",
             paidStatus:"Unpaid",
-            lastLogin:"Jan/12/2012",
-            Dues:"Mar/14/2012",
+            lastLogin:"12/JAN/2012",
+            Dues:"14/MAR/2012",
             amount:7500,
                 activity:[
             {
-                  Date:"Jan/12/2010",
+                  Date:"12/APR/2010",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2010",
+ Date:"12/FEB/2010",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2010",
+                 Date:"12/APR/2010",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -341,22 +345,22 @@ export  const store = createStore({
             email:"ola@gmail.com",
             online:"Active",
             paidStatus:"Overdue",
-            lastLogin:"Jan/12/2006",
-            Dued:"Mar/14/2007",
+            lastLogin:"12/AUG/2006",
+            Dued:"14/MAR/2007",
             amount:900,
                 activity:[
               {
-                  Date:"Jan/12/2004",
+                  Date:"12/SEP/2004",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2004",
+ Date:"23/JUN/2004",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2004",
+                 Date:"22/OCT/2004",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -371,22 +375,23 @@ export  const store = createStore({
             email:"willai32m@gmail.com",
             online:"Active",
             paidStatus:"Overdue",
-            lastLogin:"Jan/12/2006",
-            paidOn:"Mar/14/2007",
+            lastLogin:"31/JAN/2006",
+            paidOn:"15/MAR/2007",
             amount:1000,
                 activity:[
+                
               {
-                  Date:"Jan/12/2009",
+                  Date:"30/JAN/2009",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2009",
+ Date:"12/FEB/2009",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2009",
+                 Date:"12/NOV/2009",
                   activity:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies.",
                   details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus, sed purus eu semper morbi id nunc, adipiscing vitae. Ultricies suspendisse vestibulum."
               }
@@ -401,22 +406,22 @@ export  const store = createStore({
             email:"hikay222@gmail.com",
             online:"Active",
             paidStatus:"Paid",
-            lastLogin:"Jan/12/2006",
-            paidOn:"Mar/14/2010",
+            lastLogin:"31/JAN/2006",
+            paidOn:"18/JUL/2010",
             amount:200,
             activity:[
               {
-                  Date:"Jan/12/2004",
+                  Date:"4/FEB/2004",
                   activity:"Lorem ipsum dolor sit amet.",
                   details:"Lorem ipsum Ultricies suspendisse vestibulum."
               },
               {
- Date:"Feb/12/2004",
+ Date:"30/MAY/2004",
                   activity:"Lorem ipsum",
                   details:"Lorem ipsum cies suspendisse vestibulum."
               },
               {
-                 Date:"Nov/12/2004",
+                 Date:"12/DEC/2004",
                   activity:"Lorem ipsum dolo",
                   details:"Lorem ipsum dolor ltricies suspendisse vestibulum."
               }
@@ -433,22 +438,22 @@ export  const store = createStore({
             email:"ekweaga@gmail.com",
             online:"Active",
             paidStatus:"Paid",
-            lastLogin:"Jan/12/2006",
-            paidOn:"Mar/14/2007",
+            lastLogin:"12/MAY/2006",
+            paidOn:"13/JUL/2007",
             amount:200,
             activity:[
               {
-                  Date:"Jan/12/2004",
+                  Date:"20/JAN/2004",
                   activity:"Lorem ipsum ",
                   details:"Lorem ipsum dolor sit amet,disse vestibulum."
               },
               {
- Date:"Feb/12/2004",
+ Date:"12/FEB/2004",
                   activity:"Lorem ipsum dolor sit .",
                   details:"Lorem ipsum d nunc, adipiscing vitae. Ubulum."
               },
               {
-                 Date:"Nov/12/2004",
+                 Date:"12/NOV/2004",
                   activity:"Lorem ipsum dolor.",
                   details:"Lorem ipsum dolor site vestibulum."
               }

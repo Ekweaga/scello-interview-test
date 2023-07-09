@@ -53,14 +53,14 @@ mounted(){
 
 
 <template>
-  <div class="md:w-[900px] ml-[0px] border-zinc-300 border-b-[1px] h-[45px] mb-[20px] overflowX-hidden ">
-    <div class="flex justify-between items-center">
+  <div class="md:w-[900px] ml-[0px] border-zinc-300 border-b-[1px] md:h-[50px] mb-[20px] overflowX-hidden ">
+    <div class="flex md:justify-between items-center">
       <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
+  <div class="">
   
     
-    <div class="" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+    <div class="flex" id="navbarNavAltMarkup">
+      <div class="navbar-nav flex">
         <li class="nav-link active cursor-pointer" aria-current="page"  @click="all" >All</li>
         <li class="nav-link cursor-pointer"   @click="paid">Paid</li>
         <li class="nav-link cursor-pointer"  @click="unpaid">Unpaid</li>
@@ -72,7 +72,7 @@ mounted(){
      
 
         <div>
-          <span class="text-[#8F8AAC]">Total payable amount</span> : <span class="font-bold text-[#6D5BD0]">{{total}} USD</span>
+          <span class="text-[#8F8AAC]">Total payable amount</span> : <span class="font-bold text-[#6D5BD0]">${{total}} USD</span>
         </div>
 
     </div>

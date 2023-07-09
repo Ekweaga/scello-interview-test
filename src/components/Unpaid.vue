@@ -9,7 +9,8 @@ export default {
     currentindex : 0,
     isvisible : this.$store.state.display,
     users : [],
-    inputValue:""
+    inputValue:"",
+    viewImage:true,
 
    
 
@@ -22,6 +23,9 @@ mounted(){
   ,
 
  methods:{
+   Alrt(){
+this.viewImage = !this.viewImage
+},
     
      search(value){
     console.log(value)
@@ -48,14 +52,15 @@ mounted(){
     <div class="filterSearch bg-white w-full ml-[0px] rounded-md flex justify-between p-2">
         <div class="flex gap-2">
           
-               <select class="form-select" aria-label="Default select example">
+               <select class="form-select shadow-md" aria-label="Default select example">
   <option selected>Filter</option>
   <option value="1">First Name</option>
   <option value="2">Last Name</option>
   <option value="3">Email</option>
 </select>
-<div class="bg-[#F4F2FF] p-2">
-    <input type="text" class="bg-transparent focus:outline-none focus:border-none w-[300px] px-3 rounded-md placeholder-[#A9A4C2]" placeholder="Search Users by Name,Email,Date" v-model="inputValue"  @keyup="search(inputValue)" />
+<div class="bg-[#F4F2FF] p-2 flex items-center gap-2 rounded-md shadow-md">
+  <img src="../assets/Shape/Search.png" class="w-[15px] h-[15px]"/>
+    <input type="text" class="bg-transparent focus:outline-none focus:border-none w-[300px]  rounded-md placeholder-[#A9A4C2]" placeholder="Search Users by Name,Email,Date" v-model="inputValue"  @keyup="search(inputValue)"/>
 </div>
                 
             
@@ -70,7 +75,7 @@ mounted(){
 
       <table  class="table">
        
-         <thead class="bg-[#F4F2FF] p-2">
+         <thead class="bg-[#F4F2FF] p-2 table-light">
     <tr class="bg-[#F4F2FF]">
       <th> <input type="checkbox"/></th>
       <th scope="col">NAME</th>
@@ -85,11 +90,12 @@ mounted(){
     </tr>
   </thead>
         <tbody>
-          <tr v-for="user in users" :key="user.email">
+          <tr v-for="user in users" :key="user.email" @click="Alrt">
             <td class="">
               <div class="flex mt-[20px] gap-4">
                  <input type="checkbox"/>
-                  <img src="../assets/Icon/Master.png" class="w-[13px]"/></div>
+                   <img src="../assets/Icon/Master.png" class="w-[16px]" v-if="viewImage"/>
+                     <img src="../assets/Icon/viewdown.png" class="w-[16px]" v-if="!viewImage"/></div>
                  
 
             </td>
@@ -132,7 +138,8 @@ mounted(){
               </td>
              
               <td>
-                 View more
+                <span class="cursor-pointer">
+                 View more</span>
               </td>
               <td>
                 <img src="../assets/view/More.png" class="w-[13px]"/>

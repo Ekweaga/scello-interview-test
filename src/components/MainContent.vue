@@ -16,6 +16,9 @@ export default {
     count:this.$store.state.count,
     page:1,
     displayDetails:false,
+    id:0,
+    viewImage:true,
+    sortValue:""
 
    
 
@@ -34,16 +37,36 @@ created(){
 
  methods:{
 
+  sort(){
+    console.log(this.sortValue)
+    if(this.sortValue == "all"){
+      this.users = this.$store.state.Users.slice( (this.page - 1) * 5, (this.page - 1) * 5 + 5  )
+    }
+
+    if(this.sortValue == "firstName"){
+      let sortedNames= this.$store.state.Users.slice( (this.page - 1) * 5, (this.page - 1) * 5 + 5  ).sort((a,b)=>{
+        if(a.firstName < b.firstName){
+          return;
+        }
+
+         if(a.firstName > b.firstName){
+          return;
+        }
+
+
+      })
+      this.users = sortedNames
+    }
+
+  }
+,
   showDetails(id){
     this.users.forEach((item)=>{
-      if(item.id === id){
- this.displayDetails = !this.displayDetails
- console.log(id)
- return;
+      if(item.id == id){
+        this.displayDetails = !this.displayDetails
+        this.viewImage = !this.viewImage
       }
-      else{
-        return;
-      }
+     
     })
 
    
@@ -62,7 +85,7 @@ created(){
        this.users = this.$store.state.Users.slice( (this.page - 1) * 5, (this.page - 1) * 5 + 5  )
     }
     else{
-      let filterValue = this.$store.state.Users.filter((item)=>
+      let filterValue = this.users.filter((item)=>
        item.firstName.toLowerCase().includes(value.toLowerCase()) || item.lastName.toLowerCase().includes(value.toLowerCase()) || item.email.toLowerCase().includes(value.toLowerCase())
       )
       if(filterValue.length == 0){
@@ -99,15 +122,17 @@ created(){
 <div class="MainContent w-[900px] rounded-2xl border relative">
     <div class="filterSearch bg-white w-full ml-[0px] rounded-md flex justify-between p-2">
         <div class="flex gap-2">
+       
           
-               <select class="form-select" aria-label="Default select example">
-  <option selected>Filter</option>
-  <option value="1">First Name</option>
-  <option value="2">Last Name</option>
-  <option value="3">Email</option>
+               <select class="form-select shadow-md" aria-label="Default select example" v-model="sortValue" @change="sort">
+  <option value="all"> <img src="../assets/Shape/Filter.png" class="w-[15px] h-[15px]"/>Filter</option>
+  <option value="firstName">First Name</option>
+  <option value="lastName">Last Name</option>
+  <option value="email">Email</option>
 </select>
-<div class="bg-[#F4F2FF] p-2">
-    <input type="text" class="bg-transparent focus:outline-none focus:border-none w-[300px] px-3 rounded-md placeholder-[#A9A4C2]" placeholder="Search Users by Name,Email,Date" v-model="inputValue"  @keyup="search(inputValue)"/>
+<div class="bg-[#F4F2FF] p-2 flex gap-2 items-center rounded-md shadow-md">
+  <img src="../assets/Shape/Search.png" class="w-[15px] h-[15px]"/>
+    <input type="text" class="bg-transparent focus:outline-none focus:border-none w-[300px]  rounded-md placeholder-[#A9A4C2]" placeholder="Search Users by Name,Email,Date" v-model="inputValue"  @keyup="search(inputValue)"/>
 </div>
                 
             
@@ -118,63 +143,47 @@ created(){
     </div>
 
 
-    <div class="flex flex-col">
 
-      <div v-if="empty">
-          {{empty}}
-      </div>
 
-      <table  class="table" v-if="users">
+     
+
+      <table  class="table" >
+     
        
-         <thead class="thead-dark">
-    <tr class="">
-      <th> <input type="checkbox"/></th>
-      <th scope="col">NAME</th>
+         <thead class="table-light">
+
+    <tr class="bg-[#F2F0F9]">
+      <th > <input type="checkbox" class="w-[20px] text-[20px]"/></th>
+      <th scope="col" class="text-[#7F79A0] text-sm">NAME</th>
       <th scope="col">USER STATUS</th>
       <th scope="col">PAYMENT STATUS</th>
        <th scope="col">AMOUNT</th>
         <th scope="col"></th>
-      <th scope="col"> <img src="../assets/view/More.png" class="w-[13px]"/></th>
-
-     
-      
+      <th scope="col"> <img src="../assets/view/More.png" class="w-[13px]"/></th> 
     </tr>
+
   </thead>
+
         <tbody>
-          <tr v-for="user in users" :key="user?.email">
+          <template v-for="user in users" :key="user?.id" >
+            
+          <tr class="cursor-pointer hover:bg-[#F2F0F9]" @click="showDetails(user.id)" data-toggle="collapse" data-target="">
+
             <td class="">
               <div class="flex mt-[20px] gap-4">
-                 <input type="checkbox" @click="paid"/>
-                  <img src="../assets/Icon/Master.png" class="w-[13px]"/></div>
-                 
-
+                 <input type="checkbox" @click="paid" class="w-[20px] text-[20px]"/>
+                  <img src="../assets/Icon/Master.png" class="w-[16px]" v-if="viewImage"/>
+                     <img src="../assets/Icon/viewdown.png" class="w-[16px]" v-if="!viewImage"/>
+                  </div>
             </td>
-            <td class="">
-              <div class="flex flex-col ">
+
+
+            <td class="" >
+            
                   <h4 class="font-bold text-sm">
                 {{user.firstName}} {{user.lastName}}
               </h4>
               <span class="text-[#ADAAC2]">{{user.email}}</span>
-              </div><br/>
-              <table>
-                 
-         <thead class="thead-dark">
-    <tr class="">
-      
-      <th scope="col" class="text-sm">DATE</th>
-      <th scope="col" class="text-sm">ACTIVITY</th>
-      <th scope="col" class="text-sm">DETAIL</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="userActivity in user.activity" :key="userActivity.details">
-      <td class="text-sm">{{userActivity.Date}}</td>
-      <td class="text-sm">{{userActivity.activity}}</td>
-      <td class="text-sm">{{userActivity.details}}</td>
-      </tr>
-  </tbody>
-              </table>
-             
             
               </td>
 
@@ -189,35 +198,63 @@ created(){
                
               </td>
 
+
               <td class="">
                   <span v-bind:class="{
-                  'bg-[#CDFFCD]  px-[4px] rounded-full text-[#0D870D] w-[55px] font-bold h-[23px] flex gap-[2px] ': user.paidStatus == 'Paid',
+                  'bg-[#CDFFCD]  px-[4px] rounded-full text-[#0D870D] w-[55px] font-bold h-[23px] flex gap-[2px]  ': user.paidStatus == 'Paid',
                   'bg-[#FFECCC]  px-[4px] rounded-full text-[#965E00] w-[80px]  font-bold  h-[23px] flex gap-[2px] ': user.paidStatus == 'Unpaid',
-                    'bg-[#FFE0E0]  px-[4px] rounded-full text-[#D81C1C] w-[80px]  font-bold  h-[23px] flex gap-[2px] ': user.paidStatus == 'Overdue'
-
-
+                    'bg-[#FFE0E0]  px-[4px] rounded-full text-[#D81C1C] w-[80px]  font-bold  h-[23px] flex gap-[2px]  ': user.paidStatus == 'Overdue'
 
                 }">
                <b class="text-[13px] font-extrabold px-[2px] ">.</b> <span class="font-bold">{{user.paidStatus}}</span></span>
 
                  <span class="text-sm">{{user.paidOn ? 'Paid on':null}} {{user.Dued ? 'Dued on':null}} {{user.Dues ? 'Dues on':null}} {{user.paidOn}} {{user.Dued}} {{user.Dues}}</span>
               </td>
+
               <td>
               <span class="font-bold"> ${{user.amount}}</span><br/><span>USD</span>
               </td>
              
               <td>
-                <span class="cursor-pointer text-sm" @click="showDetails(user.id)">
+                <span class="cursor-pointer text-sm " data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" href="#collapseExample" data-target="#collapseExample" @click="showDetails(user.id)" >
                  View more</span>
-                 
               </td>
+
               <td>
                 <img src="../assets/view/More.png" class="w-[13px] cursor-pointer"/>
-              </td>
-              
+              </td> 
           </tr>
           
+
+<tr>
+
+          <table class=" table table-light  " v-if="user.id == id" >
+
+                <thead >    
+        	<tr class="text-sm ">
+          <th class="text-sm" >NAME</th>
+          <th class="text-sm" colspan="">ACTIVITY</th>
+          <th class="text-sm" colspan="">DETAIL</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          <template  v-for="userActivity in user.activity" :key="userActivity.details">
+          <tr >
+          <td class="text-sm">{{userActivity.Date}}</td>
+           <td colspan="" class="text-sm">{{userActivity.activity}}</td>
+            <td colspan="" class="text-sm">{{userActivity.details}}</td>
+
+          </tr>
+          </template>
+        </tbody>
+  
           
+          
+</table></tr>
+          
+         
+          </template>
           </tbody>
       
 
@@ -233,8 +270,8 @@ created(){
 
       
 
-    </div>
-<div class="absolute right-0 -bottom-[20px]">
+    
+<div class="absolute right-0 -bottom-[20px] pagination">
 
  <nav aria-label="Page navigation example ">
   <ul class="pagination">
@@ -260,5 +297,19 @@ created(){
 </template>
 
 <style >
+tr.collapse.in {
+  display:table-row;
+}
+tr:hover{
+  background:#F2F0F9;
+}
+
+tr th td{
+  font-size:15px;
+}
+.pagination{
+  z-index:2px;
+}
+
 
 </style>
