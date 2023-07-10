@@ -9,7 +9,8 @@ export default {
     all : this.$store.state.all,
     paid:this.$store.state.paid,
     unpaid:this.$store.state.unpaid,
-    overdue:this.$store.state.overdue
+    overdue:this.$store.state.overdue,
+    self:this
 
    
 
@@ -19,7 +20,7 @@ export default {
 },
 
 mounted(){
-    console.log(this.$store.state.unpaid)
+    console.log(self.$store.state.unpaid)
   }
 
 }
@@ -41,16 +42,16 @@ import Unpaid from "./components/Unpaid.vue"
 <div class="flex flex-col items-center justify-center  mt-[50px] ml-[120px] py-2">
 
 <Heading/>
-<div v-if="this.$store.state.paid">
+<div v-if="self.$store.state.paid">
 <Paid/>
 </div>
-<div v-if="this.$store.state.all">
+<div v-if="self.$store.state.all">
     <MainContent/>
 </div>
- <div v-if="this.$store.state.unpaid">
+ <div v-if="self.$store.state.unpaid">
     <Unpaid/>
  </div>
-<div v-if="this.$store.state.overdue">
+<div v-if="self.$store.state.overdue">
   <Overdue/>
 </div>
 
