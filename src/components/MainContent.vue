@@ -30,8 +30,7 @@ created(){
    this.userActivity = this.$store.state.Users.map((item)=>{
     return item.activity
    })
-   console.log(this.userActivity)
-   console.log(this.users)
+  
 }
   ,
 
@@ -65,7 +64,11 @@ created(){
       if(item.id == id){
         this.displayDetails = !this.displayDetails
         this.viewImage = !this.viewImage
+        this.id = this.id + 1 
+        
+      
       }
+     
      
     })
 
@@ -228,7 +231,7 @@ created(){
 
 <tr>
 
-          <table class=" table table-light  " v-if="user.id == id" >
+          <table class=" table table-light  " v-if="false" >
 
                 <thead >    
         	<tr class="text-sm ">
